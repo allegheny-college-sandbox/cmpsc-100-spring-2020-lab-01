@@ -282,9 +282,9 @@ mv ulysses-1.jpeg ../home
 
 ### Waypoint
 
-> -------------------------------------------------------------------------------------------------------------
+> 
 > If you reach this point, you may stop and continue this exercise tomorrow during our first practical session.
-> -------------------------------------------------------------------------------------------------------------
+> 
 
 ### Finishing your work
 
