@@ -19,4 +19,5 @@ repositories {
   mavenCentral()
 }
 
+apply plugin: 'application'
 mainClassName = ''
