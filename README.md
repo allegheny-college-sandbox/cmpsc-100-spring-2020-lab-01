@@ -2,7 +2,7 @@
 
 * Assigned: 16 January 2020
 * Due: 23 January 2020 by 2:30 PM
-    * These toolss will be necessary for class next Thursday, so be sure to finish this work before our next lab period!
+    * These tools will be necessary for class next Thursday, so be sure to finish this work before our next lab period!
 * Point value: 30 pts
 
 In this lab session, we focus on setting up some of the various tools and platforms that are mission-critical to our work. Initially, these include:
@@ -11,6 +11,16 @@ In this lab session, we focus on setting up some of the various tools and platfo
 * [GitHub](https://www.github.com)
 * git
 * [Atom](https://atom.io)
+
+## Table of Contents
+
+* [Accepting an assignment](#accepting-an-assignment)
+* [Assignment setup](#assignment-setup)
+* [File management](#file-management)
+* [Cloning a repository](#cloning-a-repository)
+* [Activity: Helping Ulysses find his way home](#helping-ulysses-find-his-way-home)
+    * [Waypoint](#waypoint)
+* [Docker](#docker)
 
 ## General guidelines for laboratory sessions
 
@@ -162,11 +172,11 @@ The professional world uses a standard object known as an "SSH key" to prove a g
 - [ ] Paste the long string of letters and numbers you copied above into the `Key` field
 - [ ] Click `Add SSH key` to add the key
 
-### File management
+## File management
 
 One key to making the process of completing assignments easier is to practice good "file management." The steps below will help you create a good foundation for your work this semester.
 
-#### Creating a CMSPC100 folder structure
+### Creating a CMSPC100 folder structure
 
 - [ ] On your desktop, right click to create a new folder
 - [ ] Name the new folder `CMPSC100`
@@ -178,7 +188,7 @@ One key to making the process of completing assignments easier is to practice go
 
 Depending on the activity we're doing (be it a lab, practical, or in-class activity), we'll download and save our work to the appropriate folder. Today, that's the `Labs` folder.
 
-#### Navigating your new folders
+### Navigating your new folders
 
 This section uses the commands or symbols:
 * `ls`
@@ -213,16 +223,16 @@ The output of your `pwd` command was probably not your new `CMPSC100` folder. Le
 * Do you see your `CMPSC100` folder?
 * How might you get there?
 
-### "Cloning" a repository
+## "Cloning" a repository
 
-#### Using the correct download link
+### Using the correct download link
 
 - [ ] On this repository's page, click the `Clone or download` button in the upper right hand corner
 * You may need to scroll up to see it
 - [ ] In the upper right corner of the box that appears, click `Use SSH`
 - [ ] Copy the link that appears in the textbox below the phrase "Use a password with a protected key."
 
-#### Cloning
+### Cloning
 
 - [ ] Type `ls` in your terminal window
 * You should be in your `CMPSC100` directory
@@ -233,7 +243,7 @@ The output of your `pwd` command was probably not your new `CMPSC100` folder. Le
 git clone git@github.com:allegheny-college-cmpsc-100-spring-2020/cmpsc-100-spring-2020-lab-01-dluman
 ```
 
-### Helping Ulysses find his way home
+## Helping Ulysses find his way home
 
 ![Ulysses S. Cat](https://cs.allegheny.edu/sites/dluman/cmpsc100/img/ulysses-4-teh-fanz.jpg)
 
@@ -246,7 +256,7 @@ Now we're to the real problem at hand. My cat, Ulysses, has been wandering aroun
 * Pet Store
 * Pizza Place
 
-#### Copying and moving
+### Copying and moving
 
 This section adds the following commands or symbols:
 * `mv`
@@ -322,7 +332,7 @@ The fewer the number `#` characters, the more important the heading is! This mea
 
 The `#` is referred to as a _tag_, and must be separated from the text used in the tag by a space (` `).
 
-### Docker
+## Docker
 
 Docker is what is referred to as a "containerization" platform. Essentially, it is software  which ensures that programs run the same way _everywhere_. Docker is developed with the same goal as that of the Java language we'll learn in this course--that software should work the same regardless of where it's run. Our Docker "images" will contain a single, standard Unix operating system. This minimizes technical issues and allows developers to concentrate on their code, rather than system specs. Instead of downloading dozens of tools to build and execute software, containers allow us to run one file containing all of the utilities necessary.
 
@@ -332,7 +342,7 @@ Docker is what is referred to as a "containerization" platform. Essentially, it 
     * **Mac OS X > 10.11**: [https://download.docker.com/mac/stable/docker.dmg](https://download.docker.com/mac/stable/docker.dmg)
     * **Unix**: Depending on your version, use `apt` or `yum` (or other package manager)
         
-#### Verifying installation
+### Verifying installation
 
 - [ ] Once Docker has started, open a terminal window
 - [ ] In the terminal window, type `docker --version`.
