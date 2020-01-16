@@ -262,13 +262,16 @@ This section adds the following commands or symbols:
 - [ ] Type `ls` and press `Enter`
 * You should see a file name staring with `ulysses` -- you've found him!
 - [ ] To _move_ this picture _down_ one directory, type:
+
 ```
 mv ulysses-1.jpeg ../
 ```
+
 - [ ] Press `Enter`
 - [ ] Type `pwd` and press `Enter`
-* Where are you now? What do you suppose `../` does?
-* This command moves the image (`ulysses-1.jpg`) from the `Alley` to the `neighborhood` folder.
+* Where are you now? 
+* What do you suppose `../` does?
+* This command moves the image (`ulysses-1.jpg`) from the `Alley` to the `neighborhood` folder; now we have to follow it!
 - [ ] Type `cd ../` and press `Enter` to move down one folder
 - [ ] Type `ls` and press `Enter`
 * Do you see the picture?
@@ -305,11 +308,23 @@ Throughout the semester, I'll ask you to write technical documentation which ref
 - [ ] In Atom, open the `reflection.md` file located in the `writing` folder of your lab
 * This file contains questions for you to respond to.
 * It also contains `Markdown`, a text format which quickly creates document structure. We'll learn more about this in future weeks. For now, simply respond to the questions, writing at least 1 paragraph per question in the space provided.
-* Be sure to save your work!
+* Be sure to save your work as you follow along!
+
+##### A brief primer on Markdown
+
+`Markdown`, as described above, is a set of symbols and conventions that structures a document. Here, we see use of the `#` character to signify _headings_.
+
+The fewer the number `#` characters, the more important the heading is! This means that:
+
+* `#` is the most important
+* `##` the second most
+* ...
+
+The `#` is referred to as a _tag_, and must be separated from the text used in the tag by a space (` `).
 
 ### Docker
 
-Docker is what is referred to as a "containerization" platform. Essentially, it is software  which ensures that programs run the same way _everywhere_. Docker is developed with the same goal as that of the Java language we'll learn in this course--that software should work the same regardless of where it's run. Our Docker "images" will contain a single, standard Unix (Ubuntu) operating system. This minimizes technical issues and allows developers to concentrate on their code, rather than system specs. Instead of downloading dozens of tools to build and execute software, containers allow us to run one file containing all of the utilities necessary.
+Docker is what is referred to as a "containerization" platform. Essentially, it is software  which ensures that programs run the same way _everywhere_. Docker is developed with the same goal as that of the Java language we'll learn in this course--that software should work the same regardless of where it's run. Our Docker "images" will contain a single, standard Unix operating system. This minimizes technical issues and allows developers to concentrate on their code, rather than system specs. Instead of downloading dozens of tools to build and execute software, containers allow us to run one file containing all of the utilities necessary.
 
 - [ ] Download and install Docker.
 * Depending on your operating system's version, you may need a specific platform. Consult your OS when considering the following options:
@@ -360,33 +375,29 @@ This message shows that your installation appears to be working correctly.
 
 #### Docker `container`
 
-If you do not already have the GatorGrader `container`, in a new terminal or Docker Quickstart Terminal, type `docker pull gatoreducator/dockagator` to download the correct `container`.
-
-In the last lab session, we were able to get Docker `container` versions of GatorGrader working! That means that everyone can choose to use the `container` if they'd like. Here are a couple of ways to do it.
+- [ ] In a terminal window, type `docker pull gatoreducator/dockagator` to download the correct `container`.
 
 ##### Running GatorGrader directly on `container` start
 
-* Be sure that you are in the main directory of your practicals repository when running these commands, or you'll certainly experience issues!
+* Be sure that you are in the main directory of your lab repository when running these commands, or you'll certainly experience issues!
+    * Remember, the folder containing your work is located on the desktop.
 * Remember that if you run `ls -la`, you should see a `.git` folder if you're in the main repository folder.
-* To make sure you're in the right repository, run a `pwd` command.
-    * If you recieve the expected path, you're in the right place. Else, find your way to the right location.
+- [ ] To make sure you're in the right repository, type `pwd` and press `Enter`
+    * If you recieve the expected path, you're in the right place!
 
 ```
 docker run -it --mount type=bind,source="$(pwd)",target="/project" --hostname GatorGrader gatoreducator/dockagator
 ```
 
-##### Run `gradle` commands in the container`
+##### Windows users
+
+Some Windows users may have difficulty with the above command. The command below should substitute for it:
 
 ```
-docker run -it --mount type=bind,source="$(pwd)",target="/project" --hostname GatorGrader gatoreducator/dockagator /bin/bash
+docker run -it --mount type=bind,source=%cd%,target="/project" --hostname GatorGrader gatoreducator/dockagator
 ```
 
-- [ ] To `grade` your Java work, type `gradle grade` at the `command` prompt and press the `Enter` key.
-
-#### Using `gradle` commands directly
-
-- [ ] In a terminal, ensure you're in the main folder of your practical repository and type `gradle build`
-- [ ] After the `command` completes successfully, type `gradle grade`
+Here, `%cd%` is equivalent to the Unix command `"$(pwd)"`.
 
 ### Turning or saving progress in an assignment
 

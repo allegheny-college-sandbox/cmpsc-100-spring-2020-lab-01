@@ -1,5 +1,7 @@
 # Lab 1 reflection: {YOUR NAME HERE}
 
+TODO: Erase this line and respond to the questions below.
+
 ## Describe the process of installing the various tools this exercise guided you through. 
 
 ### What was frustrating? What challenges did you overcome?

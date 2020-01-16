@@ -8,7 +8,8 @@ writing:
     reflection.md:
         ConfirmFileExists
         CountFileParagraphs --count 5
-        MatchFileFragment --fragment "{YOUR NAME HERE}" --count 0
+        MatchFileFragment --fragment "{YOUR NAME HERE}" --count 0 --exact
+        MatchFileFragment --fragment "TODO" -count 0 --exact
  
 home:
     ulysses-1.jpeg:
