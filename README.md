@@ -1,7 +1,8 @@
 # CMPSC 100-03 Lab Session 1: GitHub, file management, basic tools
 
 * Assigned: 16 January 2020
-* Due: 23 January 2020 by 11:59 PM
+* Due: 23 January 2020 by 2:30 PM
+    * These toolss will be necessary for class next Thursday, so be sure to finish this work before our next lab period!
 * Point value: 30 pts
 
 In this lab session, we focus on setting up some of the various tools and platforms that are mission-critical to our work. Initially, these include:
@@ -94,6 +95,10 @@ choco --version
 ```
 * You should see a line similar to `Chocolatey v0.10.15`. This indicates that the install was successful.
 
+#### Windows Terminal
+
+To help smooth out differences between operating systems, you will want to install `Windows Terminal` using the [instructions found here](https://chocolatey.org/packages/microsoft-windows-terminal).
+
 ### git
 
 Where GitHub is a kind of social network which stores code, git is the application that allows you to contribute your code to that network.
@@ -140,7 +145,7 @@ The professional world uses a standard object known as an "SSH key" to prove a g
 
 > Raise your hand to call a TL or the instructor over to help you through the following steps
 
-- [ ] In the resulting terminal window based on the steps above, type `ssh-keygen -t rsa -b 4096 -C "YOUR ALLEGHENY EMAIL"` and press `Enter`
+- [ ] In the resulting terminal window based on the steps above, type `ssh-keygen -t rsa -b 4096 -C "{YOUR ALLEGHENY EMAIL}"` and press `Enter`
 - [ ] At the prompt `Enter file in which to save the key`, press `Enter` to accept the default location
 * If you look at the prompt, can you tell where the default location is?
 - [ ] At the next prompt, enter a password used to secure the key
@@ -196,6 +201,8 @@ The output of your `pwd` command was probably not your new `CMPSC100` folder. Le
 - [ ] At the `command` prompt, type `cd ~` and press `Enter`
 * `cd` stands for **c**hange **d**irectory, and allows us to move to and from different folders
 * The `~` should take you to your "home" directory. This isn't your desktop, but it's closer.
+    * For Mac users, your "home" directory generally appears similar to `/Users/{YOUR COMPUTER'S USER NAME}`
+    * fOR Windows users, your "home" might look something like `C:/Users/{YOUR COMPUTER USER NAME}`
 - [ ] Type `pwd` again and press `Enter.
 * Did your location change?
 - [ ] To look around where you're at, type `ls`
@@ -210,7 +217,8 @@ The output of your `pwd` command was probably not your new `CMPSC100` folder. Le
 
 #### Using the correct download link
 
-- [ ] On this repository's page, click the `Clone or download` button
+- [ ] On this repository's page, click the `Clone or download` button in the upper right hand corner
+* You may need to scroll up to see it
 - [ ] In the upper right corner of the box that appears, click `Use SSH`
 - [ ] Copy the link that appears in the textbox below the phrase "Use a password with a protected key."
 
@@ -258,6 +266,8 @@ This section adds the following commands or symbols:
 mv ulysses-1.jpeg ../
 ```
 - [ ] Press `Enter`
+- [ ] Type `pwd` and press `Enter`
+* Where are you now? What do you suppose `../` does?
 * This command moves the image (`ulysses-1.jpg`) from the `Alley` to the `neighborhood` folder.
 - [ ] Type `cd ../` and press `Enter` to move down one folder
 - [ ] Type `ls` and press `Enter`
@@ -283,8 +293,8 @@ mv ulysses-1.jpeg ../home
 ### Waypoint
 
 > 
-> If you reach this point, you may stop and continue this exercise tomorrow during our first practical session.
-> 
+> If you reach this point, stop here and we'll continue this exercise tomorrow during our first practical session.
+>
 
 ### Finishing your work
 
@@ -299,23 +309,6 @@ Throughout the semester, I'll ask you to write technical documentation which ref
 * It also contains `Markdown`, a text format which quickly creates document structure. We'll learn more about this in future weeks. For now, simply respond to the questions, writing at least 1 paragraph per question in the space provided.
 * Be sure to save your work!
 
-#### `Commit`s
-
-The GitHub platform is a place to store your work. So, it makes some sense that should be able to _clone_ (download) from it, and push back (upload) to it. Here, we'll learn this second part.
-
-- [ ] `cd` to your folder containing this lab in your `~/Desktop/CMPSC100/Labs` or `~/OneDrive/Desktop/CMSPC100/Labs` directory
-
-Once in this folder, we need to tell git that there have been changes.
-
-- [ ] Type `git add .` and press `Enter`
-* This tells git to look through the _entire_ folder structure for new changes and "stage" them
-
-- [ ] Type `git commit -m "{Commit message}"` to "label" the commit
-* This is typically something like `git commit -m "Fixing a typo" -- the message in quotes should be as descriptive as possible, while still remaining somewhat short
-
-- [ ] To send all changes to the server, type `git push`
-- [ ] At the prompt, input the password associated with the `SSH Key` you created earlier
-
 ### Docker
 
 Docker is what is referred to as a "containerization" platform. Essentially, it is software  which ensures that programs run the same way _everywhere_. Docker is developed with the same goal as that of the Java language we'll learn in this course--that software should work the same regardless of where it's run. Our Docker "images" will contain a single, standard Unix (Ubuntu) operating system. This minimizes technical issues and allows developers to concentrate on their code, rather than system specs. Instead of downloading dozens of tools to build and execute software, containers allow us to run one file containing all of the utilities necessary.
@@ -326,7 +319,8 @@ Docker is what is referred to as a "containerization" platform. Essentially, it 
     * **Mac OS X > 10.11**: [https://download.docker.com/mac/stable/docker.dmg](https://download.docker.com/mac/stable/docker.dmg)
     * **Unix**: Depending on your version, use `apt` or `yum` (or other package manager)
         
-#### If you installed "Docker Desktop"
+#### Verifying installation
+
 - [ ] Once Docker has started, open a terminal window
 - [ ] In the terminal window, type `docker --version`.
     * The terminal should display a line similar to `Docker version 19.03.1, build 74b1e89`
@@ -363,3 +357,53 @@ This message shows that your installation appears to be working correctly.
 ```
 
 > When you've finished running the Docker container, raise your hand to call a TL or the professor over so that they can have a look!
+
+### GatorGrader
+
+#### Docker `container`
+
+If you do not already have the GatorGrader `container`, in a new terminal or Docker Quickstart Terminal, type `docker pull gatoreducator/dockagator` to download the correct `container`.
+
+In the last lab session, we were able to get Docker `container` versions of GatorGrader working! That means that everyone can choose to use the `container` if they'd like. Here are a couple of ways to do it.
+
+##### Running GatorGrader directly on `container` start
+
+* Be sure that you are in the main directory of your practicals repository when running these commands, or you'll certainly experience issues!
+* Remember that if you run `ls -la`, you should see a `.git` folder if you're in the main repository folder.
+* To make sure you're in the right repository, run a `pwd` command.
+    * If you recieve the expected path, you're in the right place. Else, find your way to the right location.
+
+```
+docker run -it --mount type=bind,source="$(pwd)",target="/project" --hostname GatorGrader gatoreducator/dockagator
+```
+
+##### Run `gradle` commands in the container`
+
+```
+docker run -it --mount type=bind,source="$(pwd)",target="/project" --hostname GatorGrader gatoreducator/dockagator /bin/bash
+```
+
+- [ ] To `build` your Java work, type `gradle build` at the `command` prompt and press the `Enter` key.
+- [ ] To `grade` your Java work, type `gradle grade` at the `command` prompt and press the `Enter` key.
+
+#### Using `gradle` commands directly
+
+- [ ] In a terminal, ensure you're in the main folder of your practical repository and type `gradle build`
+- [ ] After the `command` completes successfully, type `gradle grade`
+
+### Turning or saving progress in an assignment
+
+The GitHub platform is a place to store your work. So, it makes some sense that should be able to _clone_ (download) from it, and push back (upload) to it. Here, we'll learn this second part.
+
+- [ ] `cd` to your folder containing this lab in your `~/Desktop/CMPSC100/Labs` or `~/OneDrive/Desktop/CMSPC100/Labs` directory
+
+Once in this folder, we need to tell git that there have been changes.
+
+- [ ] Type `git add .` and press `Enter`
+* This tells git to look through the _entire_ folder structure for new changes and "stage" them
+
+- [ ] Type `git commit -m "{Commit message}"` to "label" the commit
+* This is typically something like `git commit -m "Fixing a typo" -- the message in quotes should be as descriptive as possible, while still remaining somewhat short
+
+- [ ] To send all changes to the server, type `git push`
+- [ ] At the prompt, input the password associated with the `SSH Key` you created earlier
