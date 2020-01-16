@@ -279,9 +279,6 @@ mv ulysses-1.jpeg ../home
 - [ ] Press `Enter`
 
 * `cp` (or "copy") works exactly the same way, except that it _copies_ the image from one place to another instead of only _moving_ it.
-
-- [ ] 
-
 * Tip: You can combine `../` multiple times to move images down more than one level. For example, to move `ulysses-1.jpeg` from `Alley` directly to `home`, I could've typed:
 
 ```
@@ -289,6 +286,7 @@ mv ulysses-1.jpeg ../home
 ```
 
 - [ ] Move the remaining 5 pictures `home`!
+
 
 ### Waypoint
 
@@ -383,7 +381,6 @@ docker run -it --mount type=bind,source="$(pwd)",target="/project" --hostname Ga
 docker run -it --mount type=bind,source="$(pwd)",target="/project" --hostname GatorGrader gatoreducator/dockagator /bin/bash
 ```
 
-- [ ] To `build` your Java work, type `gradle build` at the `command` prompt and press the `Enter` key.
 - [ ] To `grade` your Java work, type `gradle grade` at the `command` prompt and press the `Enter` key.
 
 #### Using `gradle` commands directly
@@ -406,4 +403,4 @@ Once in this folder, we need to tell git that there have been changes.
 * This is typically something like `git commit -m "Fixing a typo" -- the message in quotes should be as descriptive as possible, while still remaining somewhat short
 
 - [ ] To send all changes to the server, type `git push`
-- [ ] At the prompt, input the password associated with the `SSH Key` you created earlier
+- [ ] At the prompt, input the password associated with the `SSH Key` you created earlier in this exercise (yesterday)
